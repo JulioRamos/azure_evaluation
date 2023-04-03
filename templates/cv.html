@@ -51,9 +51,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Azure's Playground</h2>
         <div class="w3-container">
             
-            <h4 class="w3-text-teal"><b>Guess Game</b></h5>
+            <h4 class="w3-text-black"><b>Guess Game</b></h4>
             <p>This is just an small app I created as an attempt to play with Azure. The app will try to guess your number. It has a maximum of three attempts.</p>
-            <p>The project can be seen at <a href="https://github.com/JulioRamos/azure_evaluation" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a></p>
 
             <form method="POST" action="{{ url_for('guess') }}">
                 <label for="user_num">Enter a number between 1 and 20:</label>
@@ -80,6 +79,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <form method="GET" action="{{ url_for('restart') }}">
                 <p><input type="submit" value="Restart"></p><br>
             </form>
+            
+            h4 class="w3-text-black">
+            <p>This project's code can be seen at <a href="https://github.com/JulioRamos/azure_evaluation" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a></p>
+          </h4>
 
         </div>
 
