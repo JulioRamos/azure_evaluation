@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Julio Ramos CV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+
+        <div class="w3-display-container">
+          <div class="w3-card-4">
+            <img src="{{ url_for('static', filename='images/julio-bw.jpg') }}" style="width: 50%;margin-left: auto;margin-right: auto;display: block;" alt="Avatar">
+            <div class="w3-container w3-text-black w3-center">
+              <h2>Julio Ramos</h2>
+            </div>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Software Test Engineer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Prague, CZ</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>julio.mat03@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+420 734287551</p>
+          <hr>          
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Azure's Playground</h2>
+        <div class="w3-container">
+            
+            <h4 class="w3-text-teal"><b>Guess Game</b></h5>
+            <p>This is just an small app I created as an attempt to play with Azure. The app will try to guess your number. It has a maximum of three attempts.</p>
+
+            <form method="POST" action="{{ url_for('guess') }}">
+                <label for="user_num">Enter a number between 1 and 20:</label>
+                <input type="number" name="user_num" id="user_num" min="1" max="20">
+                <input type="submit" value="Guess">
+            </form>
+
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+
+            {% if guesses %}
+                <p>Previous guesses:</p>
+                <ul>
+                    {% for guess in guesses %}
+                        {% if guess[2] %}
+                            <li>My guess was {{ guess[0] }}. That was correct!</li>
+                        {% else %}
+                            <li>My guess was {{ guess[0] }}. That was {{ guess[1] }}.</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <form method="GET" action="{{ url_for('restart') }}">
+                <p><input type="submit" value="Restart"></p><br>
+            </form>
+
+        </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <a href="https://github.com/JulioRamos" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/jcdeco/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html>
