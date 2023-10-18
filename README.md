@@ -16,7 +16,7 @@ The Flask application contains the following files:
 ## Installation
 1. Clone the repository using the following command:
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/your-username/your-repo.git](https://github.com/JulioRamos/azure_evaluation.git
 ```
 
 2. Install the required packages using the following command:
